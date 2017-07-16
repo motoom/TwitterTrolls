@@ -18,3 +18,4 @@ for line in open("data/BhagNawazBhag_stream.txt"):
 
 
 #shobzwashere
+# I think it worked! greetings from Michiel, motoom@xs4all.nl
