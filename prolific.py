@@ -3,7 +3,7 @@ import collections
 
 twitterers = collections.defaultdict(int)
 
-with open("stream_BhagNawazBhag.json") as f:
+with open("data/BhagNawazBhag_stream.txt") as f:
     for line in f:
         ob = json.loads(line)
         # text = ob.get("text", "")
