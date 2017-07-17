@@ -6,7 +6,7 @@ def process(inputfn, outputfn):
 
     wordcloud = collections.defaultdict(int)
 
-    with open("data/BhagNawazBhag_stream.txt") as f:
+    with open(inputfn) as f:
         for line in f:
             ob = json.loads(line)
             words = ob.get("text", "").lower().split(" ")
@@ -41,6 +41,6 @@ def process(inputfn, outputfn):
 
 
 if __name__ == "__main__":
-    process("data/stream_IndiaIsraelFriendship.json", "data/stream_IndiaIsraelFriendship-wordcloud.txt")
+    process("data/stream_IndiaIsraelFriendship-part.json", "data/stream_IndiaIsraelFriendship-part-wordcloud.txt")
   
   

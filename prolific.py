@@ -5,7 +5,7 @@ import codecs
 def process(inputfn, outputfn):
     twitterers = collections.defaultdict(int)
 
-    with open("data/BhagNawazBhag_stream.txt") as f:
+    with open(inputfn) as f:
         for line in f:
             ob = json.loads(line)
             # text = ob.get("text", "")
@@ -27,7 +27,7 @@ def process(inputfn, outputfn):
 
 
 if __name__ == "__main__":
-    process("data/stream_IndiaIsraelFriendship.json", "data/stream_IndiaIsraelFriendship-prolific.txt")
+    process("data/stream_IndiaIsraelFriendship-part.json", "data/stream_IndiaIsraelFriendship-part-prolific.txt")
   
   
   

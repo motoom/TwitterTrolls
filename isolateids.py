@@ -14,5 +14,5 @@ def process(inputfn, outputfn):
 
 
 if __name__ == "__main__":
-    process("data/stream_IndiaIsraelFriendship.json", "data/stream_IndiaIsraelFriendship-ids.txt")
+    process("data/stream_IndiaIsraelFriendship-part.json", "data/stream_IndiaIsraelFriendship-part-ids.txt")
   

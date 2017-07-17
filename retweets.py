@@ -6,7 +6,7 @@ def process(inputfn, outputfn):
 
     retweeted = collections.defaultdict(int)
 
-    with open("data/BhagNawazBhag_stream.txt") as f:
+    with open(inputfn) as f:
         for line in f:
             ob = json.loads(line)
 
@@ -30,6 +30,6 @@ def process(inputfn, outputfn):
         f.write("\n".join(report))
         
 if __name__ == "__main__":
-    process("data/stream_IndiaIsraelFriendship.json", "data/stream_IndiaIsraelFriendship-retweets.txt")
+    process("data/stream_IndiaIsraelFriendship-part.json", "data/stream_IndiaIsraelFriendship-part-retweets.txt")
   
   
