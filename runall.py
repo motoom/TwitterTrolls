@@ -13,6 +13,9 @@ for fn in glob.glob("data/stream_*.json"):
     outputfn = fn.replace(".json", "-ids.txt")
     isolateids.process(inputfn, outputfn)
 
+    outputfn = fn.replace(".json", "-screennames.txt")
+    isolatescreennames.process(inputfn, outputfn)
+
     outputfn = fn.replace(".json", "-prolific.txt")
     prolific.process(inputfn, outputfn)
 
