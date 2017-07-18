@@ -1,4 +1,5 @@
 import glob
+import extracttweets
 import isolateids
 import isolatescreennames
 import prolific
@@ -9,6 +10,9 @@ for fn in glob.glob("data/stream_*.json"):
     print "Processing %s" % fn
     
     inputfn = fn
+
+    outputfn = fn.replace(".json", "-tweets.txt")
+    extracttweets.process(inputfn, outputfn)
 
     outputfn = fn.replace(".json", "-ids.txt")
     isolateids.process(inputfn, outputfn)
