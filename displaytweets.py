@@ -1,22 +1,21 @@
 import json
+import codecs
 
 def process(inputfn, outputfn):
-    nr = 0
+    report = []
     for line in open(inputfn):
         ob = json.loads(line)
-        text = ob.get("text", "")
+        text = ob.get("text", "").replace("\n", " ").replace("  ", " ").strip()
         user = ob.get("user")
+        username = "unknown"
         if user:
-            username = user.get("name", "")
-        print username.encode("utf8")
-        print text.encode("utf8")
-        print
+            username = user.get("screen_name", "")
+        msg = u"%s: %s" % (username, text)
+        report.append(msg)
 
-        if nr > 10:
-            break
-        else:
-            nr += 1
-
+    with codecs.open(outputfn, "w", "utf8") as f:
+        f.write("\n".join(report))
+        
 if __name__ == "__main__":
-    process("data/stream_IndiaIsraelFriendship.json", None)
-    
+    process("data/stream_IndiaIsraelFriendship-part.json", "data/stream_IndiaIsraelFriendship-part-tweets.txt")
+   
