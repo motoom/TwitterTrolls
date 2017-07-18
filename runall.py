@@ -1,7 +1,7 @@
 import glob
 import extracttweets
-import isolateids
-import isolatescreennames
+import extractids
+import extractscreennames
 import prolific
 import retweets
 import wordcloud
@@ -15,10 +15,10 @@ for fn in glob.glob("data/stream_*.json"):
     extracttweets.process(inputfn, outputfn)
 
     outputfn = fn.replace(".json", "-ids.txt")
-    isolateids.process(inputfn, outputfn)
+    extractids.process(inputfn, outputfn)
 
     outputfn = fn.replace(".json", "-screennames.txt")
-    isolatescreennames.process(inputfn, outputfn)
+    extractscreennames.process(inputfn, outputfn)
 
     outputfn = fn.replace(".json", "-prolific.txt")
     prolific.process(inputfn, outputfn)
